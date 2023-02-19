@@ -1,0 +1,39 @@
+    bool canPair(vector<int> nums, int k) {
+        unordered_map<int,int> m;
+        for(int i=0;i<nums.size();i++)
+        {
+            nums[i]=nums[i]%k;
+        }
+        for(auto x:nums)
+        {
+            m[x]++;
+        }
+        for(auto x:nums)
+        {   if(x==0)
+          {
+            auto temp=m.find(x);
+            if(temp->second==1)
+            {
+                return false;
+            }
+          }
+          else
+        {    int num=k-x;
+            if(m.find(num)!=m.end())
+            {
+                if(num==x)
+                {
+                    auto temp=m.find(num);
+                    if(temp->second==1)
+                    {
+                        return false;
+                    }
+                }
+            }
+            else
+            {
+                false;
+            }
+        }   }
+        return true;
+    }
