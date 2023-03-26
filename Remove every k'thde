@@ -1,0 +1,22 @@
+int longestSubstrDistinctChars (string S)
+{
+     unordered_map<char,int> m;
+     int i=0;
+     int j=0;
+     int count=0;
+     while(j<S.size())
+    {    m[S[j]]++;
+         auto temp=m.find(S[j]);
+         if(temp->second==1)
+         {
+             count=max(count,j-i+1);
+             j++;
+         }
+         else
+         {   m.clear();
+             i=i+1;
+             j=i;
+         }
+    }
+    return count;
+}
