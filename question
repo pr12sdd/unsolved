@@ -1,0 +1,30 @@
+void sort012(int a[], int n)
+    {
+        vector<int> m;
+        for(int i=0;i<n;i++)
+        {
+            if(a[i]==0)
+            {
+                m.push_back(a[i]);
+            }
+        }
+        for(int i=0;i<n;i++)
+        {
+            if(a[i]==1)
+            {
+                m.push_back(a[i]);
+            }
+        }
+        for(int i=0;i<n;i++)
+        {
+            if(a[i]==2)
+            {
+                m.push_back(a[i]);
+            }
+        }
+        for(int i=0;i<m.size();i++)
+        {
+            a[i]=m[i];
+        }
+        
+    }
