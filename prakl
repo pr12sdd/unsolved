@@ -1,0 +1,12 @@
+int find_median(vector<int> v)
+		{
+		    sort(v.begin(),v.end());
+		    if(v.size()%2==0)
+		    {
+		        int median=v.size()/2;
+		        return (v[median-1]+v[median])/2;
+		    }
+		    int median=v.size()/2;
+		    return v[median];
+		    
+		}
